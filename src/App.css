@@ -182,3 +182,33 @@
     border-right-color: var(--border);
   }
 }
+
+
+.btn-list{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  margin-bottom: 20px;
+}
+
+.statistics-list{
+  display: flex;
+  flex-direction: column;
+  
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+}
+
+button{
+padding: 10px 20px;
+background-color: red;
+border: none;
+border-radius: 10px;
+}
