@@ -1,13 +1,11 @@
-import { Component } from "react";
-
-class Statistics extends Component{
 
 
-    render() {
-        const {good, neutral, bad, total, positive} = this.props
+function Statistics ({good, neutral, bad, total, positive}){
+
+
+
         return(
             <>
-
                 <h2>Statistics</h2>
              <ul className='statistics-list'>
       <li>
@@ -28,7 +26,7 @@ class Statistics extends Component{
     </ul>
             </>
         )
-    }
+    
 }
 
 export default Statistics

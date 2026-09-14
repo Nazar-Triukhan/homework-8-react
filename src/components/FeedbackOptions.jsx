@@ -1,9 +1,9 @@
-import { Component  } from "react";
 
-class FeedbackOptions extends Component {
 
-    render() {
-        const {addGood, addNatural, addBad} = this.props
+function FeedbackOptions ({addGood, addNatural, addBad}) {
+
+
+
         return(
             <ul className='btn-list'>
       <li>
@@ -17,7 +17,7 @@ class FeedbackOptions extends Component {
       </li>
     </ul>
         )
-    }
+    
 }
 
 export default FeedbackOptions

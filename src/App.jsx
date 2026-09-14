@@ -1,49 +1,51 @@
-import { Component } from 'react'
-import './App.css'
-import Statistics from './components/Statistics'
-import FeedbackOptions from './components/FeedbackOptions'
-import Text from './components/Title'
-import Section from './components/Section'
+import { useState } from "react";
+import "./App.css";
+import Statistics from "./components/Statistics";
+import FeedbackOptions from "./components/FeedbackOptions";
+import Text from "./components/Title";
+import Section from "./components/Section";
 
-class App extends Component {
+function App() {
+  const [good, setGood] = useState(0);
+  const [neutral, setNeutral] = useState(0);
+  const [bad, setBad] = useState(0);
 
-state = {
-  good: 0,
-  neutral: 0,
-  bad: 0,
-}
+  const addGood = () => {
+    setGood(good + 1);
+  };
+  const addNatural = () => {
+    setNeutral(neutral + 1);
+  };
+  const addBad = () => {
+    setBad(bad + 1);
+  };
 
-addGood = () => {
-  this.setState(() => ({good: this.state.good + 1}))
-}
-addNatural = () => {
-  this.setState(() => ({neutral: this.state.neutral + 1}))
-}
-addBad = () => {
-  this.setState(() => ({bad: this.state.bad + 1}))
-}
-
-
-
-render() {
-  const {good, neutral, bad} = this.state
-
-  const total = good + neutral + bad
-  const positive = good > 0 ? good / total * 100: '0'
+  const total = good + neutral + bad;
+  const positive = good > 0 ? (good / total) * 100 : "0";
 
   return (
     <>
-    <Section >
-        <Text text={'Please leave feedback'}/>
-        <FeedbackOptions addGood={this.addGood} addNatural={this.addNatural} addBad={this.addBad}/>
-        {total ?  <Statistics good={good} neutral={neutral} bad={bad} total={total} positive={positive}/>: <p>No dani</p>}
-       
-    </Section>
-   
-   
-     </>
-  )
-}
+      <Section>
+        <Text text={"Please leave feedback"} />
+        <FeedbackOptions
+          addGood={addGood}
+          addNatural={addNatural}
+          addBad={addBad}
+        />
+        {total ? (
+          <Statistics
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            total={total}
+            positive={positive}
+          />
+        ) : (
+          <p>No dani</p>
+        )}
+      </Section>
+    </>
+  );
 }
 
-export default App
+export default App;

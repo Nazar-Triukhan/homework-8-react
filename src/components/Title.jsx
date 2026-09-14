@@ -1,12 +1,9 @@
-import { Component } from "react";
-
-class Text extends Component {
 
 
-    render() {
-        const {text} = this.props
+function Text({text}) {
+
         return <h1>{text}</h1>
-    }
+    
 }
 
 export default Text
